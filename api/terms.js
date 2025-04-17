@@ -1,8 +1,8 @@
-const fetch = require("node-fetch");
+import fetch from "node-fetch";
 
 let tokens = []; // Temporary in-memory token storage
 
-exports.handler = async (event) => {
+export async function handler(event) {
   try {
     const queryParams = new URLSearchParams(event.queryStringParameters);
     const token = queryParams.get("token");
@@ -57,4 +57,4 @@ exports.handler = async (event) => {
       body: "Internal Server Error",
     };
   }
-};
+}
